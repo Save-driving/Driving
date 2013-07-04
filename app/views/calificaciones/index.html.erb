@@ -1,0 +1,25 @@
+
+<%- model_class = Calificacion -%>
+<div class="page-header">
+  <%= image_tag('title2.png', :width => '300') %>
+  <h2 class="text-error">Calificaciones</h2>
+</div>
+<table class="table table-hover table-bordered table-condensed" id="table" >
+  <thead>
+    <tr>
+      <th>id<%= image_tag('id.png') %></th>
+      <th>foto<%= image_tag('foto1.png') %></th>
+      <th>Nombre<%= image_tag('nombres.png') %></th>
+      <th>Acciones<%= image_tag('acciones.png') %></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @calificaciones %>
+  </tbody>
+  <tfoot>
+    <tr>
+    </tr>
+  </tfoot>
+</table>
+<td><center><%= link_to image_tag('add.png'), new_calificacion_path, :remote => true %>
+</center></td>

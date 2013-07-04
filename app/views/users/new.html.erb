@@ -1,0 +1,37 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="carbonForm">
+    <div class="fieldContainer">
+      <div class="formRow"></div>
+      <img src="assets/title2.png" alt="" class="tittlelog"/>
+      <center><h2 class="text-success">REGISTRO:</h2></center>
+        <center><div class="text-info">
+          <%= f.label :username %>
+          <%= f.text_field :username, :placeholder => "ingrese su nombre de usuario" %>
+        </div></center>
+        <center><div class="text-info">
+          <%= f.label :email %>
+          <%= f.text_field :email, :placeholder => "ingrese su correo electrónico" %>
+        </div></center>
+        <center><div class="text-info">
+          <%= f.label :password %>
+          <%= f.password_field :password, :placeholder => "ingrese una contraseña" %>
+        </div></center>
+        <center><div class="text-info">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, :placeholder => "ingrese su contraseña denuevo" %>
+        </div></center>
+        <center><div class="actions"><button type="submit" class="btn btn-success">Registrarme</button></div>
+      </div>
+    </div>
+  </div>
+<% end %>

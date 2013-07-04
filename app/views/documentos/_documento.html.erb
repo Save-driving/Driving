@@ -1,0 +1,12 @@
+<tr id=<%= "documento_#{documento.id}" %>>
+  <td><%= link_to documento.id, edit_documento_path(documento), :remote => true %></td>
+  <td><%= documento.sigla %></td>
+  <td><%= documento.nombre %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), documento, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_documento_path(documento), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), documento, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

@@ -1,0 +1,19 @@
+<%- model_class = Calificacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='table'>
+		<div class='calificacion'>
+			<div class="span6">
+         	   <p class="text-info">Id:</p>
+			   <p><%= @calificacion.id %></p>
+			   <p><%= image_tag @calificacion.avatar.url(:small) %></p>
+          	   <p class="text-info">Nombre:</p>
+			  <p><%= @calificacion.nombre %></p>
+			</div>
+        </div>
+    </div>
+</div>

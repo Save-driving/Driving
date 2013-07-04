@@ -1,0 +1,34 @@
+<%- model_class = Taller -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='infor'>
+      <div class='taller'>
+        <div class="span6">
+          <p><%= image_tag @taller.avatar.url(:small) %></p>
+          <p class="text-info">Nombre de la Empresa:</p>
+          <p><%= @taller.nombres %></p>
+          <p class="text-info">Dirección:</p>
+          <p><%= @taller.direccion %></p>
+          <p class="text-info">Ciudad:</p>
+          <p><%= @taller.municipio.nombre %></p>
+        </div>
+        <div class="span3">
+          <%= image_tag('title1.png', :width => '300') %>
+          <div class="row">
+            <p class="text-info">Teléfonos:</p>
+            <p><%= @taller.telefonos %></p>
+            <p class="text-info">Email:</p>
+            <p><%= @taller.email %></p>
+            <p class="text-info">Observaciones:</p>
+            <p><%= @taller.observaciones %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

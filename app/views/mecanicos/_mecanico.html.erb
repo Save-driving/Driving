@@ -1,0 +1,16 @@
+<tr id=<%= "mecanico_#{mecanico.id}" %>>
+
+  <td><%= mecanico.nombres %></td>
+  <td><%= mecanico.direccion %></td>
+  <td><%= mecanico.municipio.nombre %></td>
+  <td><%= mecanico.telefonos %></td>
+  <td><%= mecanico.email %></td>
+  <td><%= mecanico.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), mecanico, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_mecanico_path(mecanico), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), mecanico, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

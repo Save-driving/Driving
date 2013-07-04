@@ -1,0 +1,3 @@
+$('table tbody').append("<%= escape_javascript(render @conductor) %>")
+$("input#totalregs").attr('value','<%= @conductores.count %>');
+$.lazybox.close()

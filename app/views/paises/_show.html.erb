@@ -1,0 +1,23 @@
+<%- model_class = Pais -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+    <div class="modal-body">
+	    <div class='row' id='infor'>
+	      	<div class='pais'>
+	      		<div class="span6">
+					  <%= image_tag('title1.png', :width => '300') %>
+					  <p class="text-info">Id:</p>
+					  <p><%= @pais.id %></p>
+					  <p class="text-info">Sigla:</p>
+					  <p><%= @pais.sigla %></p>
+					    <p><%= image_tag @pais.avatar.url(:small) %></p>
+					    <p class="text-info">Nombre del País:</p>
+					  <p><%= @pais.nombre %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

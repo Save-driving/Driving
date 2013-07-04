@@ -1,0 +1,21 @@
+<%- model_class = Documento -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='infor'>
+		<div class='documento'>
+			<div class="span6">
+				<p class="text-info">Id:</p>
+				<p><%= @documento.id %></p>
+				<p class="text-info">Sigla:</p>
+				<p><%= @documento.sigla %></p>
+				<p class="text-info">Nombre:</p>
+				<p><%= @documento.nombre %></p>
+			</div>		
+		</div>
+	</div>
+  </div>
+</div>

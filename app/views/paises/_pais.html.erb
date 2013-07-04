@@ -1,0 +1,14 @@
+<tr id=<%= "pais_#{pais.id}" %>>
+  <td><%= link_to pais.id, edit_pais_path(pais), :remote => true %></td>
+    <td><%= image_tag pais.avatar.url(:lsmall) %> <%= pais.nombre %></td>
+  <td><%= pais.sigla %></td>
+  <td><%= pais.nombre %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), pais, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_pais_path(pais), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), pais, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+   <td><%= link_to 'Departamentos', pais_departamentos_path(pais)%></td>
+</tr>

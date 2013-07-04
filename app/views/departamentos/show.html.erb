@@ -1,0 +1,21 @@
+<%- model_class = Departamento -%>
+<div class="page-header">
+  <%= image_tag('title2.png', :width => '300') %>
+  <h2 class="text-error"><%=t '.title', :default => model_class.model_name.human %></h2>
+</div>
+
+<dl class="dl-horizontal" id="table" >
+  <dt><strong><%= image_tag @departamento.avatar.url(:small) %></strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @departamento.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sigla) %>:</strong></dt>
+  <dd><%= @departamento.sigla %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pais_nombre) %>:</strong></dt>
+  <dd><%= @departamento.pais_nombre %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to image_tag('back2.png'), pais_departamentos_path, :title => "Atras"  %>
+  <%= link_to image_tag('editar.png'), edit_pais_departamento_path(@pais, @departamento), :title => "Editar" %>
+  <%= link_to image_tag('trash.png'), pais_departamento_path(@pais, @departamento), :method => 'delete', :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Esta usted seguro?')) }, :rel => "tooltip", :title => "Eliminar" %>
+</div>

@@ -1,0 +1,15 @@
+<tr id=<%= "carrotaller_#{carrotaller.id}" %>>
+  <td><%= carrotaller.nombres %></td>
+  <td><%= carrotaller.direccion %></td>
+  <td><%= carrotaller.municipio.nombre %></td>
+  <td><%= carrotaller.telefonos %></td>
+  <td><%= carrotaller.email %></td>
+  <td><%= carrotaller.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), carrotaller, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_carrotaller_path(carrotaller), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), carrotaller, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

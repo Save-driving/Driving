@@ -1,0 +1,23 @@
+<%= form_tag sessions_path do %>
+  <div id="carbonForm">
+    <div class="fieldContainer">
+      <div class="formRow"></div>
+      <img src="assets/title2.png" alt="" class="tittlelog"/>
+      <center><h2 class="text-success">INGRESAR:</h2></center>
+	   		 <center><div class="text-info">
+			    <%= label_tag :username %>
+			    <%= text_field_tag :username, params[:username], :placeholder => "ingrese su nombre de usuario" %>
+			  </div></center>
+			  <center><div class="text-info">
+			    <%= label_tag :password %>
+			    <%= password_field_tag :password %>
+			  </div></center>
+			  <center><div class="text-info">
+			    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+			    <%= label_tag :remember_me %>
+			  </div></center>
+			<center><div class="actions"><button type="submit" class="btn btn-success">INGRESAR</button></div></center>
+	   </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<tr id=<%= "calificacion_#{calificacion.id}" %>>
+  <td><%= link_to calificacion.id, edit_calificacion_path(calificacion), :remote => true %></td>
+  <td><%= image_tag calificacion.avatar.url(:lsmall) %></td>
+  <td><%= calificacion.nombre %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), calificacion, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_calificacion_path(calificacion), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), calificacion, :title => "Eliminar",
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

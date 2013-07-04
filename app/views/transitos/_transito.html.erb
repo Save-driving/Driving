@@ -1,0 +1,16 @@
+<tr id=<%= "transito_#{transito.id}" %>>
+
+  <td><%= transito.nombres %></td>
+  <td><%= transito.direccion %></td>
+  <td><%= transito.municipio.nombre %></td>
+  <td><%= transito.telefonos %></td>
+  <td><%= transito.email %></td>
+  <td><%= transito.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), transito, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_transito_path(transito), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), transito, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

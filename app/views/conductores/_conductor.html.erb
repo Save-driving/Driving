@@ -1,0 +1,15 @@
+<tr id=<%= "conductor_#{conductor.id}" %>>
+  <td><%= conductor.nombres %></td>
+  <td><%= conductor.direccion %></td>
+  <td><%= conductor.municipio.nombre %></td>
+  <td><%= conductor.telefonos %></td>
+  <td><%= conductor.email %></td>
+  <td><%= conductor.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), conductor, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_conductor_path(conductor), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), conductor, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

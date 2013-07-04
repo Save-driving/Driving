@@ -1,0 +1,15 @@
+<tr id=<%= "ambulancia_#{ambulancia.id}" %>>
+  <td><%= ambulancia.nombres %></td>
+  <td><%= ambulancia.direccion %></td>
+  <td><%= ambulancia.municipio.nombre %></td>
+  <td><%= ambulancia.telefonos %></td>
+  <td><%= ambulancia.email %></td>
+  <td><%= ambulancia.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), ambulancia, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_ambulancia_path(ambulancia), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), ambulancia, :title => "Eliminar",
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

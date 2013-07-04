@@ -1,0 +1,33 @@
+<%- model_class = Parqueadero -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='infor'>
+      <div class='parqueadero'>
+        <div class="span6">
+          <p><%= image_tag @parqueadero.avatar.url(:small) %></p>
+          <p class="text-info">Nombre de la Empresa:</p>
+          <p><%= @parqueadero.nombres %></p>
+          <p class="text-info">Dirección:</p>
+          <p><%= @parqueadero.direccion %></p>
+          <p class="text-info">Ciudad:</p>
+          <p><%= @parqueadero.municipio.nombre %></p>
+        </div>
+        <div class="span3">
+          <%= image_tag('title1.png', :width => '300') %>
+          <div class="row">
+            <p class="text-info">Teléfonos:</p>
+            <p><%= @parqueadero.telefonos %></p>
+            <p class="text-info">Email:</p>
+            <p><%= @parqueadero.email %></p>
+            <p class="text-info">Observaciones:</p>
+            <p><%= @parqueadero.observaciones %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

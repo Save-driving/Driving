@@ -1,0 +1,33 @@
+<%- model_class = Grua -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='infor'>
+      <div class='grua'>
+        <div class="span6">
+          <p><%= image_tag @grua.avatar.url(:small) %></p>
+          <p class="text-info">Nombre de la Empresa:</p>
+          <p><%= @grua.nombres %></p>
+          <p class="text-info">Dirección:</p>
+          <p><%= @grua.direccion %></p>
+          <p class="text-info">Ciudad:</p>
+          <p><%= @grua.municipio.nombre %></p>
+        </div>
+        <div class="span3">
+          <%= image_tag('title1.png', :width => '300') %>
+          <div class="row">
+            <p class="text-info">Teléfonos:</p>
+            <p><%= @grua.telefonos %></p>
+            <p class="text-info">Email:</p>
+            <p><%= @grua.email %></p>
+            <p class="text-info">Observaciones:</p>
+            <p><%= @grua.observaciones %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

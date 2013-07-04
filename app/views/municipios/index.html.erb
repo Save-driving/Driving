@@ -1,0 +1,56 @@
+<%- model_class = Municipio -%>
+<div class="page-header">
+  <%= image_tag('title2.png', :width => '300') %>
+  <h2 class="text-error">Municipios</h2>
+</div>
+
+<%= form_tag request.path,:method => 'get' do %>
+ <%= content_tag :label do %>
+ <h4 class="muted">Nombre Municipio: </h4>
+ <%= text_field_tag :search,params[:search], :class =>"input-medium search-query", :placeholder => "Buscar por nombres" %>
+ <%= submit_tag "Consultar", :class => 'btn btn-info', :nombre => nil%>
+ <% end %>
+<% end %>
+
+<%= form_tag request.path, :method => 'get' do %>
+  <%= content_tag :label do %>
+  <p class="text-warning">Numero Registros:
+    <%= text_field_tag :registro,params[:registro],:class =>'input-mini' %>
+  </p>
+   <% end %>
+<% end %>
+
+<table class="table table-hover table-bordered table-condensed" id="table">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %><%= image_tag('id.png') %></th>
+      <th><%= model_class.human_attribute_name(:foto) %><%= image_tag('foto1.png') %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %><%= image_tag('nombres.png') %></th>
+      <th><%= model_class.human_attribute_name(:departamento) %><%= image_tag('pais1.png') %></th>
+      <th><%= model_class.human_attribute_name(:acciones) %><%= image_tag('acciones.png') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @municipios.each do |municipio| %>
+      <tr>
+        <td><%= link_to municipio.id, municipio_path(municipio) %></td>
+        <td><%= image_tag municipio.avatar.url(:lsmall) %> <%= municipio.nombre %></td>
+        <td><%= municipio.nombre %></td>
+        <td><%= municipio.departamento_nombre %></td>
+        <td>
+          <%= link_to image_tag('zoom.png'), municipio_path(municipio), :title => "Mostrar" %>
+          <%= link_to image_tag('editar.png'), edit_municipio_path(municipio), :title => "Editar" %>
+          <%= link_to image_tag('trash.png'), municipio_path(municipio), :rel => "tooltip", :title => "Eliminar", :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Esta usted seguro?')) } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<td><center>
+<%= link_to image_tag('add.png'), new_municipio_path, :title => "Agregar Nuevo Municipio" %></center></td>
+<div align="center">
+ <%= will_paginate @municipios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;'%>
+</div>
+<p class="text-error">
+<em>Total Municipios : </em><%= @municipios.total_entries %>
+</p>

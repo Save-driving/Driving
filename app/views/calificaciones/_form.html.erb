@@ -1,0 +1,28 @@
+<%= simple_form_for(@calificacion, :html => { :class => 'form-horizontal', :multipart => true }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+
+    <div class="responsive">
+
+      <div class="modal-body">
+          <%= image_tag('title1.png', :width => '300') %>
+        <div class='row' id='table'>
+
+          <div class="span7">
+              <%= image_tag @calificacion.avatar.url(:small) %>
+            <%= f.label :Foto %>
+            <br><br>
+            <%= f.file_field :avatar %>
+            <br><br>
+            <%= f.input :nombre, :label => "Nombre",  :required => true %>
+            
+            <div class="form-actions">
+              <%= f.submit "guardar", :class => 'btn btn-primary' %>
+              <%= link_to 'Atras', calificaciones_path, :class => 'btn btn-small' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+

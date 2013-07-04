@@ -1,0 +1,15 @@
+<tr id=<%= "aseguradora_#{aseguradora.id}" %>>
+  <td><%= aseguradora.nombres %></td>
+  <td><%= aseguradora.direccion %></td>
+  <td><%= aseguradora.municipio.nombre %></td>
+  <td><%= aseguradora.telefonos %></td>
+  <td><%= aseguradora.email %></td>
+  <td><%= aseguradora.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), aseguradora, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_aseguradora_path(aseguradora), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), aseguradora, :title => "Eliminar",
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

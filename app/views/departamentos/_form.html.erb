@@ -1,0 +1,23 @@
+<%= simple_form_for ([@pais, @departamento]), :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+
+  <div class="responsive">
+
+    <div class="modal-body">
+    <%= image_tag('title2.png', :width => '300') %>
+          <div class='row' id='table'>
+              <%= image_tag @departamento.avatar.url(:small) %>
+              <%= f.label :Foto %>
+              <%= f.file_field :avatar %>
+              <%= f.input :nombre %>
+              <%= f.input :sigla %>
+              <%= f.input :pais_nombre, :url => autocomplete_pais_nombre_departamentos_path, :as =>
+            :autocomplete, :id_element => '#id' %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, :class => 'btn-primary' %>
+              <%= link_to 'Atras', pais_departamentos_path, :class => 'btn' %>
+            </div>
+          </div>
+    </div>
+  </div>
+<% end %>

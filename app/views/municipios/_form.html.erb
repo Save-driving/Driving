@@ -1,0 +1,19 @@
+<%= simple_form_for(@municipio, :html => { :class => 'form-horizontal', :multipart => true }) do |f| %>
+
+<div class="responsive">
+  <div class="modal-body">
+      <div class='row' id='table'>
+      	    <%= image_tag @municipio.avatar.url(:small) %>
+            <%= f.label :Foto %>
+            <%= f.file_field :avatar %>
+		  <%= f.input :nombre %>
+		   <%= f.input :departamento_nombre, :url => autocomplete_departamento_nombre_municipios_path, :as =>:autocomplete, :id_element => '#id' %>
+		  <div class="form-actions">
+		    <%= f.button :submit, :class => 'btn-primary' %>
+		    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+		                municipios_path, :class => 'btn' %>
+		  </div>
+	   </div>
+	</div>
+</div>	  
+<% end %>

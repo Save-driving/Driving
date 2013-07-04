@@ -1,0 +1,16 @@
+<tr id=<%= "taller_#{taller.id}" %>>
+  <td><%= taller.nombres %></td>
+  <td><%= taller.direccion %></td>
+  <td><%= taller.municipio.nombre %></td>
+  <td><%= taller.telefonos %></td>
+  <td><%= taller.email %></td>
+  <td><%= taller.observaciones %></td>
+  <td>
+    
+    <%= link_to image_tag('zoom.png'), taller, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_taller_path(taller), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), taller, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

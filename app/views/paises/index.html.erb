@@ -1,0 +1,55 @@
+<%- model_class = Pais -%>
+<div class="page-header">
+  <%= image_tag('title2.png', :width => '300') %>
+</div>
+<div class='row'>
+  <div class="span3">
+    <%= form_tag request.path, :method => 'get' do %>
+    <%= content_tag :label do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <%= text_field_tag :search, params[:search], :class =>"input-medium search-query", :placeholder => "Buscar por nombres" %>
+    <%= submit_tag "Buscar", :class => 'btn btn-info', :nombre => nil %>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="span3">
+    <div class='row'>
+      <%= form_tag request.path, :method => 'get' do %>
+      <%= content_tag :label do %>
+      <p class="text-warning">Ver:
+      <%= text_field_tag :numreg, params[:numreg], :class =>"input-mini" %>
+      registros por página</p>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  <h2 class="text-error">PAISES</h2>
+<table class="table table-hover table-bordered table-condensed pretty" id="table" >
+  <thead>
+    <tr>
+      <th><%= sortable "id" %><%= image_tag('id.png') %></th>
+      <th><%= sortable "foto" %><%= image_tag('foto1.png') %></th>
+      <th><%= sortable "sigla" %><%= image_tag('sigla.png') %></th>
+      <th><%= sortable "nombre" %><%= image_tag('nombres.png') %></th>
+      <th>Acciones<%= image_tag('acciones.png') %></th>
+      <th>Ir a</th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @paises %>
+  </tbody>
+  <tfoot>
+    <tr>
+    </tr>
+  </tfoot>
+</table>
+<td><center><%= link_to image_tag('add.png'), new_pais_path, :title => "Agregar Nuevo País", :remote => true %></center></td>
+<div align="center">
+ <%= will_paginate @paises, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;'%>
+</div>
+<br>
+<p class="muted">
+<em>Total Paises : </em><%= @paises.total_entries %>
+</p>

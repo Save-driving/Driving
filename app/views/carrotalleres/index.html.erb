@@ -1,0 +1,63 @@
+<%- model_class = Carrotaller -%>
+
+<div class="page-header">
+<%= image_tag('title2.png', :width => '300') %>
+</div>
+<div class='row'>
+  <div class="span3">
+    <%= form_tag request.path, :method => 'get' do %>
+    <%= content_tag :label do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <%= text_field_tag :search, params[:search], :class =>"input-medium search-query", :placeholder => "Buscar por nombres" %>
+    <%= submit_tag "Buscar", :class => 'btn btn-info', :nombre => nil %>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="span3">
+    <div class='row'>
+      <%= form_tag request.path, :method => 'get' do %>
+      <%= content_tag :label do %>
+      <p class="text-warning">Ver:
+      <%= text_field_tag :numreg, params[:numreg], :class =>'input-mini' %>
+      registros por página</p>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<h2 class="text-error">CARROTALLERES</h2>
+
+<table class="table table-hover table-bordered table-condensed pretty " id="table">
+  <thead>
+    <tr>
+      <th><%= sortable "nombres" %><%= image_tag('nombres.png') %></th>
+      <th><%= sortable "direccion" %><%= image_tag('direccion.png') %></th>
+      <th><%= sortable "ciudad_id" %><%= image_tag('ciudad.png') %></th>
+      <th><%= sortable "telefonos" %><%= image_tag('telefono.png') %></th>
+      <th><%= sortable "email" %><%= image_tag('email.png') %></th>
+      <th><%= sortable "observaciones" %><%= image_tag('observaciones.png') %></th>
+      <th>Acciones<%= image_tag('acciones.png') %></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @carrotalleres %>
+  </tbody>
+  <tfoot>
+    <tr>
+      
+    </tr>
+  </tfoot>
+</table>
+<td><center><%= link_to image_tag('add.png'), new_carrotaller_path, :title => "Agregar Nuevo Carrotaller", :remote => true %>
+<%= link_to image_tag('downpdf.png'), carrotalleres_path(:format => :pdf), :title => "Descargar Lista de Carrotalleres" %></center></td>
+
+<div align="center">
+<%= will_paginate @carrotalleres, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %>
+</div>
+<p class="text-error">
+<em>Total Carrotalleres : </em><%= @carrotalleres.total_entries %>
+</p>

@@ -1,0 +1,3 @@
+$('table tbody').append("<%= escape_javascript(render @parqueadero) %>")
+$("input#totalregs").attr('value','<%= @parqueaderos.count %>');
+$.lazybox.close()

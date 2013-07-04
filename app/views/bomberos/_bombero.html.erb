@@ -1,0 +1,15 @@
+<tr id=<%= "bombero_#{bombero.id}" %>>
+  <td><%= bombero.nombres %></td>
+  <td><%= bombero.direccion %></td>
+  <td><%= bombero.municipio.nombre %></td>
+  <td><%= bombero.telefonos %></td>
+  <td><%= bombero.email %></td>
+  <td><%= bombero.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), bombero, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_bombero_path(bombero), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), bombero, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

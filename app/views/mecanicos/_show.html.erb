@@ -1,0 +1,33 @@
+<%- model_class = Mecanico -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class="responsive">
+  <div class="modal-body">
+    <div class='row' id='infor'>
+      <div class='mecanico'>
+        <div class="span6">
+          <p><%= image_tag @mecanico.avatar.url(:small) %></p>
+          <p class="text-info">Nombre de la Empresa:</p>
+          <p><%= @mecanico.nombres %></p>
+          <p class="text-info">Dirección:</p>
+          <p><%= @mecanico.direccion %></p>
+          <p class="text-info">Ciudad:</p>
+          <p><%= @mecanico.municipio.nombre %></p>
+        </div>
+        <div class="span3">
+          <%= image_tag('title1.png', :width => '300') %>
+          <div class="row">
+            <p class="text-info">Teléfonos:</p>
+            <p><%= @mecanico.telefonos %></p>
+            <p class="text-info">Email:</p>
+            <p><%= @mecanico.email %></p>
+            <p class="text-info">Observaciones:</p>
+            <p><%= @mecanico.observaciones %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

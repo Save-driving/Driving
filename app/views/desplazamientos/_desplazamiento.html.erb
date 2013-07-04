@@ -1,0 +1,15 @@
+<tr id=<%= "desplazamiento_#{desplazamiento.id}" %>>
+  <td><%= desplazamiento.nombres %></td>
+  <td><%= desplazamiento.direccion %></td>
+  <td><%= desplazamiento.municipio.nombre %></td>
+  <td><%= desplazamiento.telefonos %></td>
+  <td><%= desplazamiento.email %></td>
+  <td><%= desplazamiento.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), desplazamiento, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_desplazamiento_path(desplazamiento), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), desplazamiento, :title => "Eliminar", 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

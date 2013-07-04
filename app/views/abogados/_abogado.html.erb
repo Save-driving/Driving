@@ -1,0 +1,15 @@
+<tr id=<%= "abogado_#{abogado.id}" %>>
+  <td><%= abogado.nombres %></td>
+  <td><%= abogado.direccion %></td>
+  <td><%= abogado.municipio.nombre %></td>
+  <td><%= abogado.telefonos %></td>
+  <td><%= abogado.email %></td>
+  <td><%= abogado.observaciones %></td>
+  <td>
+    <%= link_to image_tag('zoom.png'), abogado, :remote => true, :title => "Mostrar" %>
+    <%= link_to image_tag('editar.png'), edit_abogado_path(abogado), :title => "Editar", :remote => true %>
+    <%= link_to image_tag('trash.png'), abogado, :title => "Eliminar",
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr>

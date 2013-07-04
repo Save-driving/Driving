@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/LOGO.png"/>
+    <title>Bienvenido</title>
+    <meta name="Save Driving" content="Asistencia Vehicular">
+    <meta name="author" content="Asistencia Vehicular">
+        <meta name="keywords" content="jquery, circular menu, navigation, round, bubble"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  
+    </head>
+  <body id="body">
+ <div id="content">
+            <div class="title"></div>
+
+            <div class="navigation" id="nav">
+                <div class="item user">
+                    <img src="assets/bg_user.png" alt="" width="199" height="199" class="circle"/>
+                    <a href="#" class="icon"></a>
+                    <h2>Registro</h2>
+                    <ul>
+                        <li><a href="#">Proveedor</a></li>
+                        <li><a href="gruas">Login</a></li>
+                    </ul>
+                </div>
+                <div class="item home">
+                    <img src="assets/bg_home.png" alt="" width="199" height="199" class="circle"/>
+                    <a href="#" class="icon"></a>
+                    <h2>Inicio</h2>
+                    <ul>
+                        <li><a href="gruas">Buscar Asistencia</a></li>
+                    </ul>
+                </div>
+                <div class="item shop">
+                    <img src="assets/bg_shop.png" alt="" width="199" height="199" class="circle"/>
+                    <a href="#" class="icon"></a>
+                    <h2>Servicios</h2>
+                    <ul>
+                        <li><a href="#myModal0" data-toggle="modal">Tipos de Asistencia</a></li>
+                    </ul>
+                </div>
+                <div class="item camera">
+                    <img src="assets/bg_camera.png" alt="" width="199" height="199" class="circle"/>
+                    <a href="#" class="icon"></a>
+                    <h2>Somos</h2>
+                    <ul>
+                        <li><a href="#myModal" data-toggle="modal">Save Driving</a></li>
+                    </ul>
+                </div>
+                <div class="item fav">
+                    <img src="assets/bg_fav.png" alt="" width="199" height="199" class="circle"/>
+                    <a href="#" class="icon"></a>
+                    <h2>Más</h2>
+                    <ul>
+                        <li><a href="#myModal1" data-toggle="modal">Seguridad</a></li>
+                        <li><a href="#myModal3" data-toggle="modal">Social</a></li>
+                        <li><a href="#myModal2" data-toggle="modal">Gracias</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+  
+        <div class="responsive">
+            <div class="span4" id="social">
+                <ul class="bubblewrap">
+                <li><a href="http://twiter.com"><img src="assets/twitter.png" width="199" height="199"/></a></li>
+                <li><a href="http://Save Driving.com"><img src="assets/facecircle.png" width="199" height="199"/></a></li>
+                <li><a href="http://maps.google.es"><img src="assets/googlearth.png" width="199" height="199"/></a></li>
+                <li><a href="http://youtube.com"><img src="assets/circleyoutube.png" width="199" height="199"/></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="span9">
+
+            <!-- Modal -->
+            <div id="myModal0" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Asistencias Vehiculares Disponibles:</h3><%=image_tag('idcard.png') %>
+            </div>
+                <div class="modal-body">
+                <p class="text-error"><i class="icon-wrench icon-3x"></i>Mecánica:</p><br>
+                <a href="carrotalleres">Carrotalleres</a><br>
+                <a href="mecanicos">Mecánicos</a><br>
+                <a href="talleres">Talleres</a><br><br>
+                <p class="text-info"><i class="icon-truck icon-3x"></i>Vehicular:</p><br>
+                <a href="conductores">Conductores</a><br>
+                <a href="desplazamientos">Desplazamientos</a><br>
+                <a href="gruas">Gruas</a><br>
+                <a href="parqueaderos">Parqueaderos</a><br><br>
+                <p class="text-warning"><i class="icon-medkit icon-3x"></i>A Personas:</p><br>
+                <a href="abogados">Abogados</a><br>
+                <a href="ambulancias">Ambulancias</a><br>
+                <a href="bomberos">Bomberos</a><br><br>
+                <p class="text-success"><i class="icon-umbrella icon-3x"></i>Información, Tránsito y Aseguradoras:</p><br>
+                <a href="transitos">Oficinas de Tránsito</a><br>
+                <a href="aseguradoras">Aseguradoras</a><br>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
+            </div>
+             
+            <!-- Modal -->
+            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">¿Quienes Somos?</h3><%=image_tag('LOGO.png', :class => 'img-circle') %>
+            </div>
+                <div class="modal-body">
+                <h4>Save Driving es un proyecto sin ánimo de lucro, creado para que cualquier persona pueda tener asistencia vehicular sin intermediarios ni pólizas. Permite poner en contácto al usuario con el proveedor que necesita, además posibilita que los proveedores puedan ofrecer sus servicios sólo llenando sus datos; para que puedan llegar cada vez a más clientes.</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
+            </div>
+             
+            <!-- Modal -->
+            <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">¿Cómo?</h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Señor Usuario usted puede calificar el servicio prestado: <%=image_tag('application.png') %></h4>
+                    <center><%=image_tag('smile_1.png') %> <h6>Me gusta</h6></center>
+                    <br><br>
+                    <center><%=image_tag('smile_5.png') %> <h6>No me gusta</h6></center>
+                    <h4>Identificándolo como un excelente proveedor o si tuvo inconvenientes, denunciando los abusos, cuidándonos mutuamente y fomentándo la calidad en el servicio.</h4>
+                </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+            </div>
+             
+            <!-- Modal -->
+            <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">¡Gracias!<%=image_tag('favorits.png') %></h3>
+            </div>
+            <div class="modal-body">
+            <h4>Agradecemos a Mary Lou,</h4>
+            <a href="http://tympanus.net/">Tympanus.net</a>
+            <h4>Igualmente a las empresas que hacen posible este proyecto,</h4>
+            <a href="http://fasticon.com">Fast Icon.com</a><br>
+            <a href="http://dryicons.com">dryicons.com</a>
+            <h4>Agradecemos al SENA y muy especiamente a nuestros mentores: William Betancur y Paulo Andrés Carmona, porque con sus enseñánzas y dedicación contribuyeron a que éste proyecto se realizara. </h4>
+
+            </div>
+            <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+            </div>
+
+             
+            <!-- Modal -->
+            <div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Cuenta con Nosotros</h3><%=image_tag('help1.png') %>
+            </div>
+            <div class="modal-body">
+                <h4>Si desea comunicarse con nosotros, puede escribirnos al correo que aparece en el link, estamos ubicados en Medellín, Colombia en la calle XXX número: XXXXX.</h4>
+                <a href="http://Savedriving@gmail.com.co">Savedriving@gmail.com.co</a>
+                <br>
+                <h4>Síguenos a través de las redes sociales por Twitter:</h4>
+                <a href="@SaveDriving">@SaveDriving</a>
+                <br>
+                <h4>Síguenos a través de Facebook:</h4>
+                <a href="http://Save Driving">Save Driving Asistencia Vehicular</a>
+            </div>
+            <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+            </div>
+
+        <div id="myModal4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Condiciones</h3><%=image_tag('doc.png') %>
+            </div>
+            <div class="modal-body">
+                <small><p>Privacidad:
+        Seguimos la norma Colombiana 1266 de 2008 y la posterior ley de Habeas Data de 2012 que  tiene como fundamento la Resolución de Madrid adoptada por las autoridades de protección de datos de más de cincuenta países a finales de 2009 durante la Conferencia Internacional de Autoridades de Protección de Datos y Privacidad. </p><a href="http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=49981">Ver la ley de Datos Colombiana</a><p>
+        Tu privacidad es muy importante para nosotros. Poseemos unas políticas de uso de la información, te animamos a que las leas para ayudarte a comprender cómo puedes usar adecuadamente Save Driving para compartir información con otras personas y cómo recopilamos y usamos tu información.
+        1. Compartir el contenido y la información
+        Eres el propietario de todo el contenido y la información que publicas en Save Driving
+        Para el contenido protegido por derechos de propiedad intelectual, como fotografías, nos concedes específicamente el siguiente permiso, de acuerdo con la configuración de la privacidad y las aplicaciones: nos concedes una licencia no exclusiva, transferible, con derechos de sublicencia, libre de derechos de autor, aplicable globalmente, para utilizar cualquier contenido de que publiques en Save Driving o en conexión con Save Driving. Esta licencia finaliza cuando eliminas tu contenido o tu cuenta, salvo si el contenido se ha compartido con terceros y estos no lo han eliminado.
+        Cuando eliminas contenido, este se borra de forma similar a cuando vacías la papelera o papelera de reciclaje de tu equipo. No obstante, entiendes que es posible que el contenido eliminado permanezca en copias de seguridad durante un plazo de tiempo razonable (si bien no estará disponible para terceros).
+        Cuando utilizas una aplicación, esta puede solicitarte permiso para acceder a tu contenido e información y al contenido y la información que otros han compartido contigo. Exigimos que las aplicaciones respeten tu privacidad, y tu acuerdo con esa aplicación controlará el modo en el que la aplicación use, almacene y transfiera dicho contenido e información.Cuando publicas contenido o información es de carácter "Público", significa que permites que todos, incluidas las personas que son ajenas a Save Driving, accedan y usen dicha información y la asocien a ti (es decir, tu nombre y foto del perfil).
+        Siempre valoramos tus comentarios o sugerencias acerca de Save Driving, pero debes entender que podríamos utilizarlos sin obligación de compensarte por ello (del mismo modo que tú no tienes obligación de ofrecerlos).
+        2.Seguridad
+
+        Hacemos todo lo posible para hacer que Save Driving sea un sitio seguro, pero no podemos garantizarlo. Necesitamos tu ayuda para que así sea, lo que implica los siguientes compromisos de tu parte:
+        No publicarás comunicaciones comerciales no autorizadas (como correo no deseado, "spam") en Save Driving.
+        No recopilarás información o contenido de otros usuarios, ni accederás de otro modo a Save Driving, utilizando medios automáticos (como harvesting bots, robots, arañas o scrapers) sin nuestro permiso previo.
+        No participarás en marketing multinivel ilegal, como el de tipo piramidal, en Save Driving.
+        No subirás virus ni código malintencionado de ningún tipo.
+        No solicitarás información de inicio de sesión ni accederás a una cuenta perteneciente a otro usuario.
+        No molestarás, intimidarás ni acosarás a ningún usuario.
+        No publicarás contenido que contenga lenguaje ofensivo, resulte intimidatorio o pornográfico, que incite a la violencia o que contenga desnudos o violencia gráfica o injustificada.
+        No desarrollarás ni harás uso de aplicaciones de terceros que contengan, publiciten o promocionen de cualquier otro modo contenido relacionado con el consumo de alcohol o las citas, o bien de naturaleza adulta (incluidos los anuncios) sin las restricciones de edad apropiadas.
+        Seguirás nuestras Normas de las promociones y cumplirás todas las leyes que sean aplicables si ofreces en Save Driving un concurso, regalo o apuesta (colectivamente, “promoción”) o haces publicidad de ellos.
+        No utilizarás Save Driving para actos ilícitos, engañosos, malintencionados o discriminatorios.
+        No realizarás ninguna acción que pudiera inhabilitar, sobrecargar o afectar al funcionamiento correcto o al aspecto de Save Driving, como, por ejemplo, un ataque de denegación de servicio o la alteración de la presentación de páginas u otra funcionalidad de Save Driving.
+        No facilitarás ni fomentarás el incumplimiento de esta Declaración o nuestras políticas.
+         
+        3.Seguridad de la cuenta y registro
+
+        Los usuarios de Save Driving proporcionan sus nombres e información reales y necesitamos tu colaboración para que siga siendo así. Estos son algunos de los compromisos que aceptas en relación con el registro y mantenimiento de la seguridad de tu cuenta:
+        No proporcionarás información personal falsa en Save Driving, ni crearás una cuenta para otras personas sin su autorización.
+        No crearás más de una cuenta personal.
+        Si inhabilitamos tu cuenta, no crearás otra sin nuestro permiso.
+        Mantendrás la información de contacto exacta y actualizada.
+        No compartirás tu contraseña (o en el caso de los desarrolladores, tu clave secreta), no dejarás que otra persona acceda a tu cuenta, ni harás nada que pueda poner en peligro la seguridad de tu cuenta.
+        No transferirás la cuenta (incluida cualquier página o aplicación que administres) a nadie sin nuestro consentimiento previo por escrito.
+        Si seleccionas un nombre de usuario o identificador similar para tu cuenta o página, nos reservamos el derecho a eliminarlo o reclamarlo si lo consideramos oportuno (por ejemplo, si el propietario de una marca comercial se queja por un nombre de usuario que no está relacionado estrechamente con el nombre real del usuario).
+         
+        4.Protección de los derechos de otras personas
+
+        Respetamos los derechos de otras personas y esperamos que tú hagas lo mismo.
+        No publicarás contenido ni realizarás ninguna acción en Save Driving que infrinja o viole los derechos de otros o que viole la ley de algún modo.
+        Podemos retirar cualquier contenido o información que publiques en Save Driving si consideramos que infringe esta Declaración o nuestras políticas.
+        Te proporcionamos las herramientas necesarias para ayudarte a proteger tus derechos de propiedad intelectual. Para obtener más información, visita nuestra página Cómo informar de presuntas infracciones de los derechos de propiedad intelectual.
+        Si retiramos tu contenido debido a una infracción de los derechos de autor de otra persona y consideras que ha sido un error, tendrás la posibilidad de apelar.
+        Si infringes repetidamente los derechos de propiedad intelectual de otra persona, desactivaremos tu cuenta si es oportuno.
+        No puedes utilizar nuestros derechos de autor ni nuestras marcas registradas (como Save Driving, los logotipos Save Driving y SD,) ni ninguna marca que se parezca a las nuestras, excepto si lo permiten nuestras Normas de uso de las marcas de forma expresa o salvo si recibes consentimiento previo por escrito de Save Driving.
+        Si recopilas información de usuarios: deberás obtener su consentimiento previo, dejar claro que eres tú (y no Save Driving) quien recopila la información y publicar una política de privacidad que explique qué datos recopilas y cómo los usarás.
+        Save Driving ofrece herramientas de denuncia social para que los usuarios puedan hacernos llegar sus opiniones sobre los servicios Prestados.
+         
+        5.Dispositivos móviles y de otros tipos
+
+        Actualmente ofrecemos nuestros servicios de móviles de forma gratuita pero ten en cuenta que se aplicarán las tarifas normales de tu operadora, por ejemplo, las tarifas de mensajes de texto.
+        En caso de que cambies o desactives tu número de teléfono móvil, actualizarás la información de tu cuenta de Save Driving en un plazo de 48 horas para garantizar que los mensajes no se le envíen por error a la persona que pudiera adquirir tu antiguo número.
+        Proporcionas tu consentimiento y todos los derechos necesarios para permitir que los usuarios sincronicen (incluso a través de una aplicación) sus dispositivos con cualquier información que puedan ver en Save Driving.
+        6.Disposiciones especiales aplicables al software
+
+        Si descargas nuestro software, como un producto de software independiente o un plug-in para el navegador, aceptas que, periódicamente, el software puede descargar mejoras, actualizaciones y funciones adicionales a fin de mejorarlo y desarrollarlo.
+        No modificarás nuestro código fuente ni llevarás a cabo con él trabajos derivados, como descompilar o intentar de algún otro modo extraer dicho código fuente, excepto en los casos permitidos expresamente por una licencia de código abierto o si te damos nuestro consentimiento expreso por escrito.
+
+        7.Terminación
+
+        Si infringes la letra o el espíritu de esta Declaración, o de algún otro modo provocas riesgos a Save Driving o causas que estemos expuestos legalmente, podríamos dejar de proporcionarte todo o parte de Save Driving. Te notificaremos por correo electrónico o la próxima vez que intentes acceder a tu cuenta. También puedes eliminar tu cuenta o desactivar tu aplicación en cualquier momento.
+
+        8.Nos reservamos todos los derechos que no te hayamos concedido de forma expresa.
+                </p>
+            </div>
+            <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+            </div>
+
+        <div id="myModal5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Políticas de uso de información</h3><%=image_tag('doclock.png') %>
+            </div>
+            <div class="modal-body">
+                <small><p>En conformidad con lo establecido por la ley Colombiana 1581 de 2012 </p><a href="http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=49981">Ley de Datos Colombiana</a><p>Utilizamos la información que recibimos sobre ti en relación con los servicios y las funciones que te ofrecemos a ti como proveedor y a los usuarios que solicitan asistencia vehicular a traves de la aplicación, nuestros socios, los anunciantes que compran anuncios en el sitio web y los desarrolladores que crean las aplicaciones y los sitios web que utilizas. Por ejemplo, además de ayudar a las personas a ver y encontrar cosas que haces y que provees, podemos utilizar la información que recibimos sobre ti:
+                como parte de nuestro esfuerzo para mantener la seguridad de las integraciones, los servicios y los productos de Save Driving;
+                para proteger los derechos o la propiedad de Save Driving o de otros;
+                para proporcionarte funciones y servicios relacionados con la ubicación, como avisarte a ti y a tus amigos cuando vaya a celebrarse algo cerca de donde estés;
+                para calibrar o comprender la eficacia de los anuncios que tú y otros usuarios vean, además de para ofrecerte los que más te pueden interesar;
+                para hacerte sugerencias a ti y a otros usuarios de Save Driving, como: sugerir a un amigo que utilice nuestra herramienta y para operaciones internas, incluidos la solución de problemas, el análisis de datos, la investigación, el desarrollo y la mejora del servicio.
+                Concedernos este permiso no solo nos permite ofrecer el Save Driving que conoces, sino que también nos permitirá ofrecerte en el futuro funciones y servicios que utilizarán la información que recibimos sobre ti de forma innovadora.
+                Aunque nos permites utilizar la información que recibimos acerca de ti, tú eres en todo momento su propietario. Tu confianza es importante para nosotros y por ello no compartimos esta información con otros a menos que:
+                nos hayas dado tu permiso;
+                te hayamos advertido, como informándote de ello en esta política, o
+                hayamos eliminado tu nombre o cualquier otro dato por el que se te pueda identificar.
+                Obviamente, en el caso de la información que otras personas comparten sobre ti, dichas personas son quienes controlan cómo la comparten.
+                Almacenamos los datos durante el tiempo necesario para facilitarte productos y servicios, a ti y otros usuarios, incluidos los descritos anteriormente. Normalmente, la información asociada con tu cuenta se conserva hasta que elimines la cuenta. En el caso de determinados tipos de datos también tenemos prácticas específicas de conservación de datos.
+                Eliminación
+                Cuando eliminas una cuenta, se borra de forma permanente de Save Driving. Normalmente tardamos aproximadamente un mes en eliminar una cuenta, pero puede quedar información en las copias de seguridad y los registros durante un máximo de 90 días. </p>
+            </div>
+        <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+
+        <div class='row'> 
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active">
+                </li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div id="myimagen" class="active item"><%= image_tag('proveedor.jpg') %>
+                </div>
+                <div id="myimagen" class="item"><%= image_tag('info2.jpg') %></div>
+                <div id="myimagen" class="item"><%= image_tag('gruasinfo.jpg') %></div>
+                <div id="myimagen" class="item"><%= image_tag('conductorinfo.jpg') %></div>
+                <div id="myimagen" class="item"><%= image_tag('importanteinfo.jpg') %></div>
+                <div id="myimagen" class="item"><%= image_tag('carrotaller2.jpg') %></div>
+                <div id="myimagen" class="item"><%= image_tag('desplazamientoinfo.jpg') %></div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+
+</div>
+
+</body>
+<footer>
+            <div id="footer">
+            <span class="reference">
+                <a href="#myModal4" data-toggle="modal" class="text-warning">Condiciones</a><br>
+                <a href="#myModal5" data-toggle="modal" class="text-warning">Políticas de uso de información</a><br>
+                <a href="http://www.fasticon.com" class="text-warning">Fast Icon</a><br>
+                <a href="http://dryicons.com" class="text-warning">DryIcons</a><br>
+                <a href="http://www.sena.edu.co/" class="text-warning">SENA</a><br>
+                <small><h6 class="text-success">Al registrarte y al ingresar a la aplicación, muestras tu conformidad con nuestras condiciones y aceptas haber leído nuestra política de uso de información.</h6></small>
+            </span>
+        </div>
+</footer>
+</html>
